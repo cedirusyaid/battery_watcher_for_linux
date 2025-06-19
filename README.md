@@ -110,4 +110,4 @@ Silakan bantu menambahkan fitur seperti:
 ## 👨‍💻 Developer
 
 Made with ❤️ by Cedi Rusyaid
-Telegram: [@yourtelegram](https://t.me/cedirusyaid)
+Telegram: [cedirusyaid](https://t.me/cedirusyaid)
