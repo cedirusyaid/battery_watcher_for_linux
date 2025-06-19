@@ -25,7 +25,7 @@ POWER_NOW=$(echo "$INFO" | grep -E 'energy-rate:|power:' | head -n1 | awk '{prin
 PERCENT=$(echo "$INFO" | grep "percentage:" | awk '{print $2}' | tr -d '%')
 
 # === Keluar jika baterai di atas atau sama dengan 40% ===
-if [ "$PERCENT" -ge 50 ]; then
+if [ "$PERCENT" -ge 40 ]; then
     echo "ℹ️ Baterai $PERCENT% — tidak dikirim ke Telegram karena di atas 40%"
     exit 0
 fi
