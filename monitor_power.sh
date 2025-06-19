@@ -1,5 +1,5 @@
 #!/bin/bash
-
+ 
 # === Load konfigurasi dari .env ===
 ENV_FILE="$(dirname "$0")/.env"
 if [ -f "$ENV_FILE" ]; then
