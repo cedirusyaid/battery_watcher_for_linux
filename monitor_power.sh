@@ -25,8 +25,8 @@ POWER_NOW=$(echo "$INFO" | grep -E 'energy-rate:|power:' | head -n1 | awk '{prin
 PERCENT=$(echo "$INFO" | grep "percentage:" | awk '{print $2}' | tr -d '%')
 
 # === Keluar jika baterai di atas atau sama dengan 40% ===
-if [ "$PERCENT" -ge 40 ]; then
-    echo "ℹ️ Baterai $PERCENT% — tidak dikirim ke Telegram karena di atas 40%"
+if [ "$PERCENT" -ge 80 ]; then
+    echo "ℹ️ Baterai $PERCENT% — tidak dikirim ke Telegram karena di atas 80%"
     exit 0
 fi
 
@@ -42,7 +42,7 @@ fi
 
 # === Ambil 5 proses terbesar berdasarkan penggunaan memori ===
 TOP_PROCESSES=$(ps -u "$LOGIN_USER" --sort=-%mem -o pid,comm,%mem --no-headers | head -n 5)
-PROCESS_LIST="<b>📂 Proses Aktif:</b>\n<pre>$TOP_PROCESSES</pre>"
+PROCESS_LIST="<b>📂 Proses Aktif:</b><pre>$TOP_PROCESSES</pre>"
 
 # === Format pesan dalam HTML ===
 MESSAGE="📡 <b>Baterai Rendah!</b>
