@@ -40,8 +40,8 @@ Script bash sederhana untuk memantau status baterai pada sistem Linux dan mengir
 
 1. **Clone repo ini**
    ```bash
-   git clone https://github.com/namakamu/monitor-power-notifier.git
-   cd monitor-power-notifier
+   git clone https://github.com/namakamu/battery_watcher_for_linux.git
+   cd battery_watcher_for_linux
    ```
 
 2. **Buat file `.env`**

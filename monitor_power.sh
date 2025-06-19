@@ -25,8 +25,8 @@ POWER_NOW=$(echo "$INFO" | grep -E 'energy-rate:|power:' | head -n1 | awk '{prin
 PERCENT=$(echo "$INFO" | grep "percentage:" | awk '{print $2}' | tr -d '%')
 
 # === Keluar jika baterai di atas atau sama dengan 40% ===
-if [ "$PERCENT" -ge 80 ]; then
-    echo "ℹ️ Baterai $PERCENT% — tidak dikirim ke Telegram karena di atas 80%"
+if [ "$PERCENT" -ge 50 ]; then
+    echo "ℹ️ Baterai $PERCENT% — tidak dikirim ke Telegram karena di atas 40%"
     exit 0
 fi
 
@@ -45,7 +45,7 @@ TOP_PROCESSES=$(ps -u "$LOGIN_USER" --sort=-%mem -o pid,comm,%mem --no-headers |
 PROCESS_LIST="<b>📂 Proses Aktif:</b><pre>$TOP_PROCESSES</pre>"
 
 # === Format pesan dalam HTML ===
-MESSAGE="📡 <b>Baterai Rendah!</b>
+MESSAGE="📡 <b>#BateraiRendah!</b>
 🖥️ <b>Hostname:</b> $HSNAME
 👤 <b>User login:</b> $LOGIN_USER
 $PROCESS_LIST
